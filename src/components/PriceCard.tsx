@@ -1,5 +1,11 @@
 import React from "react";
-import { Card, CardAction, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 import { PlansI } from "@/lib/types";
 import { Button as BorderCard } from "./ui/moving-border";
 import GradientButton from "./GradientButton";
@@ -13,8 +19,9 @@ function PriceCard({
   border?: boolean;
   className?: string;
 }) {
-  const { name, ...rest } = item;
-  const values = Object.values(rest);
+  const values = Object.entries(item)
+    .filter(([key]) => key !== "name")
+    .map(([, value]) => value);
 
   return border ? (
     <Card className={className}>
@@ -63,9 +70,7 @@ function CardData({
         ))}
       </CardContent>
       <CardFooter className="flex items-center justify-center">
-        <GradientButton>
-            Start Trading
-        </GradientButton>
+        <GradientButton>Start Trading</GradientButton>
       </CardFooter>
     </>
   );

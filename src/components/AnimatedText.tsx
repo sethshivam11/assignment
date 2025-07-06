@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, ReactNode, ElementType } from "react";
+import { useRef, ReactNode, ElementType, RefObject } from "react";
 
 interface AnimatedBlockProps {
   children: ReactNode;
@@ -20,7 +20,7 @@ export default function AnimatedText({
   const isInView = useInView(ref, { once: true });
 
   return (
-    <Component ref={ref as any} className={className}>
+    <Component ref={ref as RefObject<HTMLElement | null>} className={className}>
       <motion.div
         initial={{ opacity: 0, y: initialY }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}

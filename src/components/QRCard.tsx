@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import {
   motion,
   useMotionValue,
@@ -7,6 +7,7 @@ import {
   useTransform,
   animate,
 } from "framer-motion";
+import Image from "next/image";
 
 export default function QRCard() {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -22,7 +23,7 @@ export default function QRCard() {
     damping: 10,
   });
 
-  const [isHovering, setIsHovering] = useState(false);
+  // Removed unused isHovering state
   const torchOpacity = useMotionValue(0);
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -35,14 +36,12 @@ export default function QRCard() {
   };
 
   const handleMouseEnter = () => {
-    setIsHovering(true);
     animate(torchOpacity, 1, { type: "spring", stiffness: 200, damping: 20 });
   };
 
   const handleMouseLeave = () => {
     x.set(0.5);
     y.set(0.5);
-    setIsHovering(false);
     animate(torchOpacity, 0, { type: "spring", stiffness: 200, damping: 20 });
   };
 
@@ -82,9 +81,11 @@ export default function QRCard() {
       />
 
       <div className="rounded-2xl overflow-hidden">
-        <img
+        <Image
           src="/qr-code.avif"
           alt="QR Code"
+          width="400"
+          height="400"
           className="w-full h-full object-contain pointer-events-none"
         />
       </div>

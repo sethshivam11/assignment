@@ -36,7 +36,6 @@ export default function BlurLettersOnScroll({
   );
 }
 
-// 👇 Move BlurredChar to top-level
 function BlurredChar({
   char,
   index,

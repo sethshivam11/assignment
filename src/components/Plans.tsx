@@ -78,11 +78,11 @@ function Plans() {
   ];
 
   return (
-    <section className="flex flex-col px-10 items-center gap-12 max-w-[1400px] mx-auto">
-      <div className="flex flex-col items-center gap-1">
+    <section className="flex flex-col sm:px-10 px-0.5 items-center gap-12 max-w-[1400px] mx-auto">
+      <div className="flex flex-col items-center gap-4">
         <BorderText>Our Process</BorderText>
         <AnimatedHeading
-          className={`${manRope.className} text-[55px] tracking-tighter font-semibold`}
+          className={`${manRope.className} xl:text-6xl text-4xl tracking-tighter font-semibold max-sm:leading-10 text-center max-sm:px-4`}
         >
           Compare your <span className="text-[#a35ca2]">Abcd</span> plan
         </AnimatedHeading>
@@ -90,8 +90,8 @@ function Plans() {
           Flexible Deposits for Every Trader
         </AnimatedText>
       </div>
-      <div className="p-5 pb-40 grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 gap-1">
-        <div className="flex flex-col gap-3 items-center pt-28">
+      <div className="p-1 pb-40 grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 gap-1">
+        <div className="flex flex-col gap-3 items-center pt-28 pl-2">
           {entries.map((item, index) => (
             <div
               key={index}
@@ -109,7 +109,7 @@ function Plans() {
             item={item}
             className={
               index % 2 === 0
-                ? "bg-gradient-to-b from-purple-950/40 via-purple-950/10 to-black"
+                ? "bg-gradient-to-b from-[#38113860] to-black"
                 : "bg-black"
             }
             border={index % 2 === 0}

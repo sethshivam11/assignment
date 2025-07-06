@@ -23,7 +23,6 @@ export default function QRCard() {
     damping: 10,
   });
 
-  // Removed unused isHovering state
   const torchOpacity = useMotionValue(0);
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -70,24 +69,26 @@ export default function QRCard() {
         stiffness: 200,
         damping: 15,
       }}
-      className="relative w-64 h-64 p-3 transform-3d invert bg-black/20 rounded-xl shadow-2xl overflow-hidden flex items-center justify-center max-md:invisible"
+      className="relative w-64 h-64 transform-3d bg-black overflow-hidden flex items-center justify-center max-xl:invisible"
     >
-      <motion.div
-        style={{
-          background: torchBackground,
-          opacity: torchOpacity,
-        }}
-        className="absolute inset-0 pointer-events-none transition-opacity duration-300"
-      />
-
-      <div className="rounded-2xl overflow-hidden">
-        <Image
-          src="/qr-code.avif"
-          alt="QR Code"
-          width="400"
-          height="400"
-          className="w-full h-full object-contain pointer-events-none"
+      <div className="invert bg-black/20 rounded-xl shadow-2xl p-3">
+        <motion.div
+          style={{
+            background: torchBackground,
+            opacity: torchOpacity,
+          }}
+          className="absolute inset-0 pointer-events-none transition-opacity duration-300"
         />
+
+        <div className="rounded-2xl overflow-hidden">
+          <Image
+            src="/qr-code.avif"
+            alt="QR Code"
+            width="400"
+            height="400"
+            className="w-full h-full object-contain pointer-events-none"
+          />
+        </div>
       </div>
     </motion.div>
   );

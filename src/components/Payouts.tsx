@@ -12,14 +12,14 @@ function Payouts() {
         <BorderText>Payouts</BorderText>
         <BlurredText
           text="We’ve Paid Out Over"
-          className="text-5xl font-bold text-center"
+          className="sm:text-5xl text-3xl font-bold text-center"
         />
         <BlurredText
           text=" $1M to Traders"
-          className="text-5xl font-bold text-center"
+          className="sm:text-5xl text-3xl font-bold text-center"
           start={85}
         />
-        <p className="text-[#ffffffbf]">
+        <p className="text-[#ffffffbf] max-sm:text-sm">
           Your Trust is Our Fuel—Power Up with Abcd
         </p>
       </div>
@@ -31,13 +31,15 @@ function Payouts() {
           className="transform transition-transform group-hover:rotate-45"
         />
       </BorderButton>
-      <video
-        src="/footer-video.mp4"
-        className="absolute top-60 hue-rotate-30 -z-10 object-fill bg-[#b8070700] object-center"
-        muted
-        autoPlay
-        loop
-      />
+      <div className="max-w-full max-h-[50vh] overflow-hidden absolute xl:top-60 lg:top-32 top-4">
+        <video
+          src="/footer-video.mp4"
+          className="min-w-[1528px] relative left-1/2 -translate-x-1/2 hue-rotate-30 -z-10 object-fill bg-[#b8070700] object-center"
+          muted
+          autoPlay
+          loop
+        />
+      </div>
     </div>
   );
 }

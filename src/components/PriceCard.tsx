@@ -47,12 +47,12 @@ function CardData({
 }) {
   return (
     <>
-      <CardHeader className="w-full">
-        <CardTitle className="text-center text-3xl bg-gradient-to-r from-white to-stone-400 text-transparent bg-clip-text">
+      <CardHeader className="w-full min-w-40">
+        <CardTitle className="text-center sm:text-3xl text-xl bg-gradient-to-r from-white to-stone-400 text-transparent bg-clip-text">
           {item.name}
         </CardTitle>
       </CardHeader>
-      <CardContent className="flex flex-col items-center justify-center gap-3 px-0.5 text-sm">
+      <CardContent className="flex flex-col items-center justify-center gap-3 px-0.5 sm:text-sm text-xs">
         {values.map((value, index) => (
           <div
             key={index}

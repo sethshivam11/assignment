@@ -15,18 +15,20 @@ const manRope = Manrope({
 
 function Hero() {
   return (
-    <section className="flex flex-col p-24 max-md:px-4 items-center gap-12 relative">
+    <section className="flex flex-col p-24 max-md:px-4 items-center gap-12 relative bg-[#060710]">
       <Image
         src="/bg-image.avif"
         alt="Background Image"
         width="5600"
         height="1080"
-        className="absolute w-full h-full object-cover object-top -z-10 opacity-[0.25] blur-lg"
+        className="absolute w-full h-full object-cover object-top z-0 opacity-[0.25] blur-lg"
       />
-      <div className="flex flex-col items-center justify-center gap-5 max-w-[1400px] mx-auto">
-        <div className="flex flex-col items-center gap-1">
+      <div className="flex flex-col items-center justify-center gap-5 max-w-[1400px] mx-auto z-10">
+        <div className="flex flex-col items-center gap-3">
           <BorderText>Our Process</BorderText>
-          <AnimatedHeading className={`${manRope.className} text-[55px] tracking-tighter font-semibold`}>
+          <AnimatedHeading
+            className={`${manRope.className} xl:text-6xl text-4xl tracking-tighter font-semibold max-sm:leading-10 text-center max-sm:px-4`}
+          >
             Become a <span className="text-[#a35ca2]">Abcd Pro</span> in sec...
           </AnimatedHeading>
           <div className="text-gray-400 tracking-tight">
@@ -44,10 +46,10 @@ function Hero() {
             <TracingBeam color="#a35ca2" />
             <StepNum>03</StepNum>
             <TracingBeam color="#b49ee8" />
-            <StepNum>04</StepNum>
-            <hr className="h-[35vh] w-0.5 border-none bg-muted-foreground/20 -z-10" />
+            <StepNum className="max-sm:hidden">04</StepNum>
+            <hr className="h-[35vh] w-0.5 border-none bg-muted-foreground/20 -z-10 max-sm:hidden" />
           </div>
-          <div className="flex flex-col w-full justify-between h-[160vh] mb-[25vh] max-md:col-span-2">
+          <div className="flex flex-col w-full justify-between sm:h-[160vh] h-[110vh] mb-[25vh] max-md:col-span-2">
             <Steps all />
           </div>
         </div>

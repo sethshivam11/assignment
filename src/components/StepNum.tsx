@@ -2,16 +2,13 @@
 import { useRef, useState } from "react";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 
-export default function StepNum({ children }: { children: React.ReactNode }) {
+export default function StepNum({ children, className = "" }: { children: React.ReactNode, className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const [isPastHalf, setIsPastHalf] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: [
-      "center 50%", // when element center reaches 50% of viewport
-      "center 50%", // same point since we're toggling on crossing
-    ],
+    offset: ["center 50%", "center 50%"],
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -23,7 +20,7 @@ export default function StepNum({ children }: { children: React.ReactNode }) {
       ref={ref}
       className={`text-4xl font-bold tracking-tight line-clamp-2 pt-4 ${
         isPastHalf ? "text-foreground" : "text-gray-500/50"
-      }`}
+      } ${className}`}
     >
       {children}
     </div>

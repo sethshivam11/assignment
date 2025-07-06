@@ -14,7 +14,7 @@ function Counter() {
   }, []);
 
   return (
-    <p className="xl:text-[250px] lg:text-9xl md:text-5xl text-3xl font-semibold">
+    <p className="xl:text-[250px] lg:text-9xl text-6xl font-semibold">
       <span className="bg-gradient-to-b from-[#fff] to-[#ffffff50] text-transparent bg-clip-text font-sans">
         $999,{count}
       </span>

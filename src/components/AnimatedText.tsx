@@ -6,7 +6,7 @@ import { useRef, ReactNode, ElementType, RefObject } from "react";
 interface AnimatedBlockProps {
   children: ReactNode;
   className?: string;
-  as?: ElementType; // Accept any valid JSX element or component
+  as?: ElementType;
   initialY?: number;
 }
 
